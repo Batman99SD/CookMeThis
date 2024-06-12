@@ -20,6 +20,7 @@ function displayRecipes(recipes) {
         const recipeDiv = document.createElement('div');
         recipeDiv.classList.add('recipe');
         recipeDiv.innerHTML = `
+            <img src="${recipe.image}" alt="${recipe.title}">
             <h2>${recipe.title}</h2>
             <p>${recipe.description}</p>
             <button onclick="window.location.href = '/recipes/${recipe.id}'">View Recipe</button>
