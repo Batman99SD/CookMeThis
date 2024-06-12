@@ -31,11 +31,12 @@ export default class RecipesController {
         }
       }
 
-      public static async desplayrecipe({ request, response}: HttpContext) {
+      public static async show({ request, response}: HttpContext) {
         const id = request.input('id')
         try {
           const apiResponse = await axios.get(`https://api.spoonacular.com/recipes/${id}/information`, {
             params: {
+              id,
               apiKey: '5f490fbee9bc419892f4c7f2f1a9ded8'
             }
           })
@@ -52,10 +53,10 @@ export default class RecipesController {
       return response.created(recipe)
     }
   
-    public static async show({ params, response }: HttpContext) {
+   /**  public static async show({ params, response }: HttpContext) {
       const recipe = await Recipe.findOrFail(params.id)
       return response.json(recipe)
-    }
+    }**/
   
     public static async update({ params, request, response }: HttpContext) {
       const data = request.only(['title', 'ingredients', 'instructions', 'image_url'])
