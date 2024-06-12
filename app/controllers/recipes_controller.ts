@@ -15,8 +15,8 @@ export default class RecipesController {
     }
   }
 
-    public static async fetchRecipes({ response }: HttpContext) {
-        const ingredients = 'tomato, meet'
+    public static async fetchRecipes({ request, response }: HttpContext) {
+        const ingredients = request.input('ingredients')
         try {
           const apiResponse = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', {
             params: {
