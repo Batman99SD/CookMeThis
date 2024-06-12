@@ -12,6 +12,7 @@ import RecipesController from '#controllers/recipes_controller'
 
 router.on('/').render('pages/home')
 router.get('recipes', RecipesController.fetchRecipes)
+router.get('recipes/display', RecipesController.displayrecipe)
 router.post('/recipes', RecipesController.store)
 router.get('/recipes/:id', RecipesController.show)
 router.put('/recipes/:id', RecipesController.update)
