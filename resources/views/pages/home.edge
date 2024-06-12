@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> AdonisJS - A fully featured web framework for Node.js </title>
+<html lang="en">
 
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body>
-  <h1> THIS IS Test Line </h1>
+    <header>
+        <img src="banner.jpg" alt="Recipe Finder Banner" class="banner">
+    </header>
+    <main>
+        <h1>Find Recipes by Ingredients</h1>
+        <div class="divider"></div>
+        <form id="recipe-form">
+            <input type="text" id="ingredients" placeholder="Enter ingredients (comma separated)">
+            <button type="submit">Find Recipes</button>
+        </form>
+        <section id="recipe-results">
+            <!-- Recipes will be displayed here -->
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>
