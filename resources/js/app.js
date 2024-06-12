@@ -22,6 +22,7 @@ function displayRecipes(recipes) {
         recipeDiv.innerHTML = `
             <h2>${recipe.title}</h2>
             <p>${recipe.description}</p>
+            <button onclick="window.location.href = '/recipes/${recipe.id}'">View Recipe</button>
         `;
         resultsSection.appendChild(recipeDiv);
     });
