@@ -37,6 +37,9 @@ export default class RecipesController {
           const apiResponse = await axios.get(`https://api.spoonacular.com/recipes/${id}/information`, {
             params: {
               id,
+              includeNutrition: false,
+              addWinePairing: false,
+              addTasteData: false,
               apiKey: '5f490fbee9bc419892f4c7f2f1a9ded8'
             }
           })
