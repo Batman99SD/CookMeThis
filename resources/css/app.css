@@ -90,3 +90,19 @@ button:hover {
   margin: 0 0 10px;
   font-size: 1.5em;
 }
+
+#single-recipe {
+  margin-top: 20px;
+  width: 80%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+  text-align: left;
+}
+
+#single-recipe img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}

@@ -21,7 +21,7 @@ export default class RecipesController {
           const apiResponse = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', {
             params: {
               ingredients,
-              apiKey: '5f490fbee9bc419892f4c7f2f1a9ded8'
+              apiKey: '25d500381568422286058b52ef7a2a70'
             }
           })
           return response.json(apiResponse.data)
@@ -40,7 +40,7 @@ export default class RecipesController {
               includeNutrition: false,
               addWinePairing: false,
               addTasteData: false,
-              apiKey: '5f490fbee9bc419892f4c7f2f1a9ded8'
+              apiKey: '25d500381568422286058b52ef7a2a70'
             }
           })
           return response.json(apiResponse.data)
