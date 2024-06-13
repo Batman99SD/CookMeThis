@@ -32,7 +32,7 @@ export default class RecipesController {
       }
 
       public static async show({ request, response}: HttpContext) {
-        const id = request.input('id')
+        const id = request.param('id');
         try {
           const apiResponse = await axios.get(`https://api.spoonacular.com/recipes/${id}/information`, {
             params: {
