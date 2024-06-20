@@ -1,6 +1,7 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import Recipe from '../Models/Recipe.js'
 import axios from 'axios'
+import env from '#start/env';
 
 export default class RecipesController {
     public static async index({ response }: HttpContext) {
@@ -21,7 +22,7 @@ export default class RecipesController {
           const apiResponse = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', {
             params: {
               ingredients,
-              apiKey: '25d500381568422286058b52ef7a2a70'
+              apiKey: env.get('SPOONACULAR_API_KEY')
             }
           })
           return response.json(apiResponse.data)
@@ -40,8 +41,7 @@ export default class RecipesController {
               includeNutrition: false,
               addWinePairing: false,
               addTasteData: false,
-              apiKey: '25d500381568422286058b52ef7a2a70'
-            }
+              apiKey: env.get('SPOONACULAR_API_KEY')}
           })
           // return response.json(apiResponse.data)
           const recipe = apiResponse.data;
@@ -57,11 +57,6 @@ export default class RecipesController {
       const recipe = await Recipe.create(data)
       return response.created(recipe)
     }
-  
-   /**  public static async show({ params, response }: HttpContext) {
-      const recipe = await Recipe.findOrFail(params.id)
-      return response.json(recipe)
-    }**/
   
     public static async update({ params, request, response }: HttpContext) {
       const data = request.only(['title', 'ingredients', 'instructions', 'image_url'])
