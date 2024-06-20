@@ -14,15 +14,15 @@
     </header>
     <main>
         <img src="{{recipe.image}}" alt="{{recipe.title}}">
-        <p>{{recipe.likes}} <i class="fas fa-heart"></i></p>
+        {{-- <p>{{recipe.likes}} <i class="fas fa-heart"></i></p> --}}
         <h2>Ingredients</h2>
         <ul>
-            @each(ingredient in recipe.ingredients)
+            @each(ingredient in recipe.extendedIngredients)
             <li>{{ingredient.name}}</li>
             @endeach
         </ul>
         <h2>Instructions</h2>
-        <p>{{recipe.instructions}}</p>
+        <p>{{{recipe.instructions}}}</p>
         <button onclick="window.history.back()">Back to Results</button>
     </main>
 </body>

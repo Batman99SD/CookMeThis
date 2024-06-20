@@ -54,11 +54,12 @@ function displayRecipes(recipes) {
         recipeDiv.innerHTML = `
             <img src="${recipe.image}" alt="${recipe.title}">
             <h2>${recipe.title}</h2>
-            <p>${recipe.description}</p>
+            <p>${recipe.likes} likes</p>
             <button onclick="window.location.href='/recipes/${recipe.id}'">View Recipe</button>
         `;
         resultsSection.appendChild(recipeDiv);
     });
     // resultsSection.style.display = 'block';
+    console.log(recipe);
     document.getElementById('single-recipe');
 }
