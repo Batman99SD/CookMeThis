@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html,
@@ -31,6 +32,10 @@ header {
 main {
   text-align: center;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 h1 {
@@ -75,15 +80,31 @@ button:hover {
 #recipe-results {
   margin-top: 20px;
   width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .recipe {
   background-color: white;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 15px;
-  margin: 10px 0;
-  text-align: left;
+  border-radius: 16px;
+  padding: 25px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 calc(33.333% - 20px); /* 3 columns layout */
+  box-sizing: border-box;
+  max-width: 400px;
+}
+
+.recipe img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 .recipe h2 {
@@ -96,13 +117,33 @@ button:hover {
   width: 80%;
   background-color: white;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 15px;
-  text-align: left;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 570px;
 }
 
 #single-recipe img {
   max-width: 100%;
   height: auto;
   margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+
+
+@media (max-width: 1200px) {
+  .recipe {
+    flex: 1 1 calc(50% - 20px); /* 2 columns layout */
+  }
+}
+
+@media (max-width: 768px) {
+  .recipe {
+    flex: 1 1 calc(100% - 20px); /* 1 column layout */
+  }
 }

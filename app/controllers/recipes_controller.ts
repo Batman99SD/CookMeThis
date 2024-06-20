@@ -31,7 +31,7 @@ export default class RecipesController {
         }
       }
 
-      public static async show({ request, response}: HttpContext) {
+      public static async show({ request, response, view}: HttpContext) {
         const id = request.param('id');
         try {
           const apiResponse = await axios.get(`https://api.spoonacular.com/recipes/${id}/information`, {
@@ -43,7 +43,9 @@ export default class RecipesController {
               apiKey: '25d500381568422286058b52ef7a2a70'
             }
           })
-          return response.json(apiResponse.data)
+          // return response.json(apiResponse.data)
+          const recipe = apiResponse.data;
+          return view.render('pages/recipe', { recipe });
         } catch (error) {
           console.error('Error fetching recipes from API:', error)
           return response.status(500).json({ error: 'Failed to fetch recipes' })

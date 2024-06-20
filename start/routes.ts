@@ -11,7 +11,7 @@ import router from '@adonisjs/core/services/router'
 import RecipesController from '#controllers/recipes_controller'
 
 router.on('/').render('pages/home')
-router.get('recipes', RecipesController.fetchRecipes)
+router.get('/recipes', RecipesController.fetchRecipes)
 router.post('/recipes', RecipesController.store)
 router.get('/recipes/:id', RecipesController.show)
 router.put('/recipes/:id', RecipesController.update)

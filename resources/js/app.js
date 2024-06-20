@@ -55,10 +55,10 @@ function displayRecipes(recipes) {
             <img src="${recipe.image}" alt="${recipe.title}">
             <h2>${recipe.title}</h2>
             <p>${recipe.description}</p>
-            <button onclick="viewRecipe('${recipe.id}')">View Recipe</button>
+            <button onclick="window.location.href='/recipes/${recipe.id}'">View Recipe</button>
         `;
         resultsSection.appendChild(recipeDiv);
     });
-    resultsSection.style.display = 'block';
-    document.getElementById('single-recipe').style.display = 'block';
+    // resultsSection.style.display = 'block';
+    document.getElementById('single-recipe');
 }
