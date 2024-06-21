@@ -6,9 +6,7 @@ import env from '#start/env';
 export default class RecipesController {
     public static async index({ response }: HttpContext) {
       try {
-        console.log('Reached before Recipe.all()');
         const recipes = await Recipe.all()
-        console.log('Reached after Recipe.all()');
         return response.json(recipes)
       } catch (error) {
         console.error('Error fetching recipes:', error)
@@ -57,6 +55,7 @@ export default class RecipesController {
       const recipe = await Recipe.create(data)
       return response.created(recipe)
     }
+
   
     public static async update({ params, request, response }: HttpContext) {
       const data = request.only(['title', 'ingredients', 'instructions', 'image_url'])

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookMeThis</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+
+<body>
+    <header>
+        <img src="/resources/views/pages/banner.jpg" alt="CookMeThis Banner" class="banner">
+    </header>
+    <main>
+        <h1>Find Recipes by Ingredients</h1>
+        <div class="divider"></div>
+        <form id="recipe-form">
+            <input type="text" id="ingredients" placeholder="Enter ingredients (comma separated)">
+            <button type="submit">Find Recipes</button>
+        </form>
+        <section id="recipe-results">
+            <!-- Recipes will be displayed here -->
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
