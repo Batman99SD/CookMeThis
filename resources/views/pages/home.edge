@@ -10,16 +10,28 @@
 
 <body>
     <header>
-        <img src="/resources/views/pages/banner.jpg" alt="CookMeThis Banner" class="banner">
+        {{-- <img src="/resources/views/pages/banner.jpg" alt="CookMeThis Banner" class="banner"> --}}
+        <h1>CookMeThis</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/search">Recipes</a></li>
+                <li><a href="/popular">Popular</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <h1>Welcome to CookMeThis</h1>
-        <p>Where you can find the best recipes to cook at home.</p>
-        <ul>
+        <h1>Welcome to <span>CookMeThis</span>, your ultimate culinary companion.</h1>
+        <p>Discover a vast array of delectable recipes tailored to suit your home cooking needs. Whether you're a
+            seasoned chef or a beginner in the kitchen, our platform offers a diverse selection of dishes from around
+            the globe. Explore, experiment, and elevate your cooking experience with CookMeThis.</p>
+        {{-- <ul>
             <li><a href="/search">Recipes</a></li>
-        </ul>
+        </ul> --}}
+        <button onclick="window.location.href='/search'" class="search-btn">Find Recipes</button>
     </main>
     <footer>
-        <p>&copy; 2021 CookMeThis</p>
+        <p>&copy; 2024 CookMeThis</p>
     </footer>
 </body>

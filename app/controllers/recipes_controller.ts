@@ -30,6 +30,18 @@ export default class RecipesController {
         }
       }
 
+      public static async fetchRandomRecipes({ view }: HttpContext) {
+        const apiResponse = await axios.get('https://api.spoonacular.com/recipes/random', {
+            params: {
+                number: 3, // Fetch 3 random recipes
+                apiKey: env.get('SPOONACULAR_API_KEY')
+            }
+        })
+        console.log(apiResponse.data)
+        const recipes = apiResponse.data.recipes;
+        return view.render('pages/blog', { recipes });
+    }
+
       public static async show({ request, response, view}: HttpContext) {
         const id = request.param('id');
         try {

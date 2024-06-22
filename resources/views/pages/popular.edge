@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{recipe.title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     @vite(['resources/css/app.css'])
 </head>
 
@@ -21,20 +22,9 @@
             </ul>
         </nav>
     </header>
-
     <main>
-        <h1>{{recipe.title}}</h1>
-        <img src="{{recipe.image}}" alt="{{recipe.title}}">
-        {{-- <p>{{recipe.likes}} <i class="fas fa-heart"></i></p> --}}
-        <h2>Ingredients</h2>
-        <ul>
-            @each(ingredient in recipe.extendedIngredients)
-            <li>{{ingredient.name}}</li>
-            @endeach
-        </ul>
-        <h2>Instructions</h2>
-        <p>{{{recipe.instructions}}}</p>
-        <button onclick="window.history.back()">Back to Results</button>
+
+        <h1>Popular</h1>
     </main>
 </body>
 

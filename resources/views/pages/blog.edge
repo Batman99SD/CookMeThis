@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    @vite(['resources/css/app.css'])
+</head>
+
+<body>
+    <header>
+        {{-- <img src="/resources/views/pages/banner.jpg" alt="CookMeThis Banner" class="banner"> --}}
+        <h1>CookMeThis</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/search">Recipes</a></li>
+                <li><a href="/popular">Popular</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Featured Recipes</h2>
+            <div class="recipe-container">
+                @each(recipe in recipes)
+                <article>
+                    <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                    <h3>{{ recipe.title }}</h3>
+                    <p>{{{ recipe.instructions }}}</p>
+                </article>
+                @endeach
+            </div>
+            <section>
+                <h2>Latest Posts</h2>
+                <article>
+                    <h3>Post Title</h3>
+                    <p>Post Content</p>
+                </article>
+                <article>
+                    <h3>Post Title</h3>
+                    <p>Post Content</p>
+                </article>
+                <article>
+                    <h3>Post Title</h3>
+                    <p>Post Content</p>
+                </article>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -4,17 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>CookMeThis</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
+    <header>
+        {{-- <img src="/resources/views/pages/banner.jpg" alt="CookMeThis Banner" class="banner"> --}}
+        <h1>CookMeThis</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/search">Recipes</a></li>
+                <li><a href="/popular">Popular</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <h1>Find Recipes by Ingredients</h1>
         <div class="divider"></div>
         <form id="recipe-form">
-            <input type="text" id="ingredients" placeholder="Enter ingredients (comma separated)">
-            <button type="submit">Find Recipes</button>
+            <div class="search-container">
+                <input type="text" id="ingredients" placeholder="Enter ingredients (comma separated)">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
         </form>
         <section id="recipe-results">
             <!-- Recipes will be displayed here -->
