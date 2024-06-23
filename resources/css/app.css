@@ -229,7 +229,7 @@ span {
 
 .recipe-container {
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
 }
@@ -239,7 +239,8 @@ span {
   margin: 30px;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
   border-radius: 10px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   width: 400px;
   max-height: 604px;
   /* padding: 20px; */
@@ -267,6 +268,10 @@ article p {
   .recipe {
     flex: 1 1 calc(100% - 20px); /* 1 column layout */
   }
+  .recipe-container article {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
 }
-
 
