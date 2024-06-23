@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{recipe.title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @vite(['resources/css/app.css'])
 </head>
 
@@ -23,18 +24,20 @@
     </header>
 
     <main>
-        <h1>{{recipe.title}}</h1>
-        <img src="{{recipe.image}}" alt="{{recipe.title}}">
-        {{-- <p>{{recipe.likes}} <i class="fas fa-heart"></i></p> --}}
-        <h2>Ingredients</h2>
-        <ul>
-            @each(ingredient in recipe.extendedIngredients)
-            <li>{{ingredient.name}}</li>
-            @endeach
-        </ul>
-        <h2>Instructions</h2>
-        <p>{{{recipe.instructions}}}</p>
-        <button onclick="window.history.back()">Back to Results</button>
+        <div class="recipe-view">
+            <h1>{{recipe.title}}</h1>
+            <img src="{{recipe.image}}" alt="{{recipe.title}}">
+            {{-- <p>{{recipe.likes}} <i class="fas fa-heart"></i></p> --}}
+            <h2>Ingredients</h2>
+            <ul class="ingredients-list">
+                @each(ingredient in recipe.extendedIngredients)
+                <li><i class="fa fa-leaf"></i><br> {{ingredient.name}}</li>
+                @endeach
+            </ul>
+            <h2>Instructions</h2>
+            <p style="text-align:left" class="recipe-instructions">{{{recipe.instructions}}}</p>
+            <button class="back" onclick="window.history.back()">Back to Results</button>
+        </div>
     </main>
 </body>
 

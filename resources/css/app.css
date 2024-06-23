@@ -70,6 +70,13 @@ main {
   color: #7F9F80;
 }
 
+.recipe-instructions ol, .recipe-instructions ul {
+  list-style-position: inside;
+  text-align: left;
+}
+
+
+
 h1 {
   font-size: 2.5em;
   margin: 20px 0;
@@ -226,6 +233,28 @@ footer {
 span {
   color: #2C7865;
 }
+
+.ingredients-list {
+  /* color: red; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* margin: auto; */
+}
+.ingredients-list li {
+  /* color: blue; */
+  /* flex: 1 0 21%; */
+  margin: 10px;
+  /* box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2); */
+  border-radius: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* width: 400px; */
+  /* max-height: 604px; */
+  /* padding: 20px; */
+}
+
 
 .recipe-container {
   display: flex;
