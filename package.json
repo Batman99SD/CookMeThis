@@ -1,11 +1,11 @@
 {
-  "name": "learning-adonis",
+  "name": "cockmethis",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "node bin/server.js",
+    "start": "HOST=0.0.0.0 PORT=${PORT} node ace serve --watch",
     "build": "node ace build",
     "dev": "node ace serve --hmr",
     "test": "node ace test",
