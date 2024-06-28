@@ -27,11 +27,14 @@
         <div class="recipe-view">
             <h1>{{recipe.title}}</h1>
             <img src="{{recipe.image}}" alt="{{recipe.title}}">
+            <p>Ready In {{recipe.readyInMinutes}} minutes</p>
+            <p>Seving {{recipe.servings}} People</p>
             {{-- <p>{{recipe.likes}} <i class="fas fa-heart"></i></p> --}}
             <h2>Ingredients</h2>
             <ul class="ingredients-list">
                 @each(ingredient in recipe.extendedIngredients)
-                <li><i class="fa fa-leaf"></i><br> {{ingredient.name}}</li>
+                <li><i class="fa fa-leaf"></i><br> {{ingredient.amount}} {{ingredient.unit}} {{ingredient.name}}</li>
+                {{--<li><i class="fa fa-leaf"></i><br> {{ingredient.name}}</li>--}}
                 @endeach
             </ul>
             <h2>Instructions</h2>

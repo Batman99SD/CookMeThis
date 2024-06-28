@@ -20,14 +20,18 @@ window.viewRecipe = function(id) {
         .then(recipe => {
             const title = recipe.title || 'No title found';
             const image = recipe.image || 'No image found';
+            const servings = recipe.servings || '';
+            const readyInMinutes = recipe.readyInMinutes || '';
             const description = recipe.instructions || '';
             const ingredientsHTML = recipe.extendedIngredients
-                ? recipe.extendedIngredients.map(ingredient => `<li>${ingredient.name}</li>`).join('')
+                ? recipe.extendedIngredients.map(ingredient => `<li>${ingredient.amount} - $${ingredient.unit} - ${ingredient.name}</li>`).join('')
                 : '';
 
             const recipeHTML = `
                 <h2>${title}</h2>
                 <img src="${image}" alt="${title}">
+                <p>Servings: ${servings}</p>
+                <p>Ready in Minutes: ${readyInMinutes}</p>
                 <ul>
                 ${ingredientsHTML}
                 </ul>
