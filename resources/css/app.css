@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 html,
@@ -26,31 +26,45 @@ main h1{
 }
 
 header {
-  width: 100%;
-  background-color: #7F9F80;
-  color: #fff;
-  padding: 10px 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px 50px;
+  background-color: #7F9F80; /* Adjust background color as needed */
+  border-bottom: 1px solid #ccc; /* Optional: Add a bottom border */
+}
+
+header h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 34px; /* Adjust font size as needed */
+  color: #fff;
+}
+
+header nav {
+  display: flex;
 }
 
 header nav ul {
+  display: flex;
+  justify-content: space-between;
+
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  /* justify-content: space-between; */
-  /* align-items: center; */
 }
 
 header nav ul li {
-  margin: 0 20px;
+  margin-left: 20px; /* Space between menu items */
 }
 
 header nav ul li a {
-  color: #fff;
   text-decoration: none;
+  color: #fff; /* Adjust color as needed */
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+header nav ul li a:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
 }
 
 .banner {
@@ -69,6 +83,59 @@ main {
   margin: 0 auto;
   color: #7F9F80;
 }
+
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  background-color: white;
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  max-width: 800px; /* Adjust as needed */
+  margin: auto; /* Center the container */
+}
+
+#welcome-section img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 34px;
+}
+
+@media (min-width: 768px) { /* Adjust the min-width value as needed */
+  #welcome-section {
+    flex-direction: row; /* Change flex direction to row */
+    text-align: left; /* Align text to the left */
+  }
+
+  #welcome-section img {
+    margin-top: 0; /* Remove top margin */
+    margin-left: 20px; /* Add left margin */
+    max-width: 50%; /* Adjust width if needed */
+  }
+
+  #welcome-section main {
+    max-width: 50%; /* Adjust width if needed */
+  }
+}
+
+.search-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #abc0ac; /* Adjust the color as needed */
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-btn:hover {
+  background-color: #abc0ac; /* Adjust the color as needed */
+}
+
 
 .recipe-instructions{
   list-style-position: inside;
@@ -225,7 +292,7 @@ button:hover {
 }
 
 footer {
-  background-color: rgb(92, 22, 22);;
+  background-color: #7F9F80;
   color: #fff;
   text-align: center;
   padding: 10px;
@@ -269,11 +336,9 @@ span {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* margin: 0 auto; */
-  padding: 30px;
+  padding: 20px;
   background-color: #dfece0;
   box-shadow: #2C7865;
-
 }
 
 .recipe-view h1, h2, img{
@@ -290,7 +355,7 @@ span {
 }
 
 .recipe-container article {
-  flex: 1 0 21%;
+  /* flex: 1 0 21%; */
   margin: 30px;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
   border-radius: 10px;
@@ -298,7 +363,6 @@ span {
   overflow-x: hidden;
   width: 400px;
   max-height: 604px;
-  /* padding: 20px; */
 }
 
 article h3 {

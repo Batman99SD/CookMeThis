@@ -24,31 +24,36 @@
     </header>
     <main>
         <section>
-            <h2>Featured Recipes</h2>
+            <h1>Featured Recipes</h1>
             <div class="recipe-container">
                 @each(recipe in recipes)
-                <article>
+                <article class="recipe-card">
                     <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
                     <h3>{{ recipe.title }}</h3>
                     <p>{{{ recipe.instructions }}}</p>
                 </article>
                 @endeach
             </div>
-            <section>
-                <h2>Latest Posts</h2>
-                <article>
-                    <h3>Post Title</h3>
-                    <p>Post Content</p>
+        </section>
+        <section>
+            <h1>Latest Posts</h1>
+            <div class="blog-posts">
+                <article class="blog-post">
+                    <h3>10 Tips for Perfect Pasta</h3>
+                    <p>Discover the secrets to making the perfect pasta with our top 10 tips. From selecting the right
+                        ingredients to cooking techniques, learn how to elevate your pasta dishes.</p>
                 </article>
-                <article>
-                    <h3>Post Title</h3>
-                    <p>Post Content</p>
+                <article class="blog-post">
+                    <h3>How to Bake the Best Chocolate Chip Cookies</h3>
+                    <p>Get ready to bake the best chocolate chip cookies ever. Follow our step-by-step guide and enjoy
+                        delicious, gooey cookies that are sure to be a hit with everyone.</p>
                 </article>
-                <article>
-                    <h3>Post Title</h3>
-                    <p>Post Content</p>
+                <article class="blog-post">
+                    <h3>The Health Benefits of a Mediterranean Diet</h3>
+                    <p>Explore the numerous health benefits of the Mediterranean diet. Learn how incorporating fresh,
+                        wholesome ingredients into your meals can improve your overall well-being.</p>
                 </article>
-            </section>
+            </div>
         </section>
     </main>
 </body>
