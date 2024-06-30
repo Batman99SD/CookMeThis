@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 html,
@@ -208,7 +208,7 @@ button:hover {
   border-radius: 32px;
   overflow: hidden;
   display: flex;
-  height: 200px;
+  /* height: 200px; */
 }
 
 #ingredients {
@@ -225,12 +225,18 @@ button:hover {
   background-color: #7F9F80;
   /* color: white; */
   cursor: pointer;
-  padding: 10px 20px;
-  height: 50px;
+  /* padding: 10px 20px; */
+  /* height: 50px; */
 }
 
 .fa-search{
   font-size: 20px;
+
+}
+
+#message{
+  margin-top: 150px;
+  color: #7F9F80;
 
 }
 
@@ -364,6 +370,8 @@ span {
   overflow-x: hidden;
   width: 400px;
   max-height: 604px;
+  padding: 20px;
+  margin: 20px;
 }
 
 article h3 {
@@ -392,6 +400,14 @@ article p {
     display: block;
     width: 100%;
     margin: 10px 0;
+  }
+  header nav ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .bar{
+    display: none;
   }
 }
 
