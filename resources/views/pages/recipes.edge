@@ -16,26 +16,43 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
+                <li class="bar">|</li>
                 <li><a href="/search">Recipes</a></li>
+                <li class="bar">|</li>
                 <li><a href="/popular">Popular</a></li>
+                <li class="bar">|</li>
                 <li><a href="/blog">Blog</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Find Recipes by Ingredients</h1>
+        <h1><i class="fa fa-cutlery" aria-hidden="true"></i> Unleash Your Inner Chef: <br> Discover Delicious Dishes
+            Based on
+            What You Have</h1>
+        <p><b>Tired of staring at a pantry full of possibilities?</b>
+            This recipe finder is your culinary compass! Simply enter the ingredients you have on hand, <br> and we'll
+            unlock
+            a world of mouthwatering meals waiting to be created. No more scrambling through cookbooks or wasting
+            precious groceries. Let's turn your kitchen into a haven of creativity and deliciousness!</p>
         <div class="divider"></div>
         <form id="recipe-form">
-            <div class="search-container">
+            <div>
                 <input type="text" id="ingredients" placeholder="Enter ingredients (comma separated)">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
         </form>
+        <div id="message">
+            <h2 style="text-align:center;">Try to enter some ingredients.</h2>
+        </div>
         <section id="recipe-results">
             <!-- Recipes will be displayed here -->
         </section>
     </main>
-    <script src="script.js"></script>
+    {{--
+    <script src="script.js"></script> --}}
+    <footer>
+        <p>&copy; 2024 CookMeThis</p>
+    </footer>
 </body>
 
 </html>

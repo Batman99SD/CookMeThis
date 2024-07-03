@@ -67,3 +67,37 @@ function displayRecipes(recipes) {
     console.log(recipe);
     document.getElementById('single-recipe');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('recipe-form');
+    const ingredientsInput = document.getElementById('ingredients');
+    const noInputMessage = document.getElementById('no-input-message');
+    const recipeResults = document.getElementById('recipe-results');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const ingredients = ingredientsInput.value.trim();
+
+        if (!ingredients) {
+            noInputMessage.style.display = 'block';
+            recipeResults.style.display = 'none';
+        } else {
+            noInputMessage.style.display = 'none';
+            recipeResults.style.display = 'block';
+            // Add your code to fetch and display recipes
+        }
+    });
+});
+
+document.getElementById('recipe-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from being submitted
+  
+    var ingredients = document.getElementById('ingredients').value.trim();
+  
+    if (ingredients === '') {
+      document.getElementById('message').style.display = 'block'; // Show the message
+    } else {
+      document.getElementById('message').style.display = 'none'; // Hide the message
+      // Continue with your form submission process...
+    }
+  });

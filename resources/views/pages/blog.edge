@@ -16,41 +16,78 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
+                <li class="bar">|</li>
                 <li><a href="/search">Recipes</a></li>
+                <li class="bar">|</li>
                 <li><a href="/popular">Popular</a></li>
+                <li class="bar">|</li>
                 <li><a href="/blog">Blog</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section>
-            <h2>Featured Recipes</h2>
+            <h1>Featured Recipes</h1>
             <div class="recipe-container">
                 @each(recipe in recipes)
-                <article>
+                <article class="recipe-card">
                     <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
                     <h3>{{ recipe.title }}</h3>
                     <p>{{{ recipe.instructions }}}</p>
                 </article>
                 @endeach
             </div>
-            <section>
-                <h2>Latest Posts</h2>
-                <article>
-                    <h3>Post Title</h3>
-                    <p>Post Content</p>
-                </article>
-                <article>
-                    <h3>Post Title</h3>
-                    <p>Post Content</p>
-                </article>
-                <article>
-                    <h3>Post Title</h3>
-                    <p>Post Content</p>
-                </article>
-            </section>
         </section>
+        <section class="blog-posts">
+            <h1>Latest Posts</h1>
+            <div class="post-container">
+                <article class="blog-post">
+                    <h3>10 Tips for Perfect Pasta</h3>
+                    <p>Discover the secrets to making the perfect pasta with our top 10 tips. From selecting the right
+                        ingredients to cooking techniques, learn how to elevate your pasta dishes.</p>
+                </article>
+                <article class="blog-post">
+                    <h3>How to Bake the Best Chocolate Chip Cookies</h3>
+                    <p>Get ready to bake the best chocolate chip cookies ever. Follow our step-by-step guide and enjoy
+                        delicious, gooey cookies that are sure to be a hit with everyone.</p>
+                </article>
+                <article class="blog-post">
+                    <h3>The Health Benefits of a Mediterranean Diet</h3>
+                    <p>Explore the numerous health benefits of the Mediterranean diet. Learn how incorporating fresh,
+                        wholesome ingredients into your meals can improve your overall well-being.</p>
+                </article>
+                <article class="blog-post">
+                    <h3>Mastering the Art of Grilling</h3>
+                    <p>Take your grilling skills to the next level with our expert tips and tricks. From choosing the
+                        right cuts of meat to mastering the perfect sear, become a grill master in no time.</p>
+                </article>
+                {{-- <article class="blog-post">
+                    <h3>5 Quick and Healthy Breakfast Ideas</h3>
+                    <p>Start your day off right with these quick and healthy breakfast ideas. From smoothies to
+                        overnight oats, find delicious and nutritious options for busy mornings.</p>
+                </article>
+                <article class="blog-post">
+                    <h3>Vegetarian Meals for Meat Lovers</h3>
+                    <p>Discover hearty and satisfying vegetarian meals that even meat lovers will enjoy. Learn how to
+                        create delicious plant-based dishes that are packed with flavor and nutrition.</p>
+                </article>
+                <article class="blog-post">
+                    <h3>Summer Salads for Refreshing Meals</h3>
+                    <p>Beat the heat with these refreshing summer salads. Find recipes that are light, healthy, and
+                        perfect for hot weather dining.</p>
+                </article>
+                <article class="blog-post">
+                    <h3>Decadent Desserts for Chocolate Lovers</h3>
+                    <p>Indulge your sweet tooth with these decadent dessert recipes. Perfect for chocolate lovers, these
+                        treats will satisfy your cravings.</p>
+                </article> --}}
+            </div>
+        </section>
+
     </main>
+    <footer>
+        <p>&copy; 2024 CookMeThis</p>
+    </footer>
 </body>
 
 </html>
