@@ -456,11 +456,20 @@ article p {
   .blog-post {
       flex: 1 1 calc(33.333% - 20px); /* 3 columns layout on medium screens */
   }
+    #desktop-nav {
+      display: none;
+    }
+    #hamburger-nav {
+      display: flex;
+}
 }
 
 @media (max-width: 768px) {
   .blog-post {
       flex: 1 1 calc(50% - 20px); /* 2 columns layout on small screens */
+  }
+  .desktop{
+    display: none;
   }
 }
 
@@ -498,3 +507,8 @@ article p {
   }
 }
 
+@media (min-width: 769px) {
+.fa-solid{
+  display: none;
+}
+}
