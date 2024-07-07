@@ -84,21 +84,19 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             noInputMessage.style.display = 'none';
             recipeResults.style.display = 'block';
-            // Add your code to fetch and display recipes
         }
     });
 });
 
 document.getElementById('recipe-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from being submitted
+    event.preventDefault();
   
     var ingredients = document.getElementById('ingredients').value.trim();
   
     if (ingredients === '') {
-      document.getElementById('message').style.display = 'block'; // Show the message
+      document.getElementById('message').style.display = 'block';
     } else {
-      document.getElementById('message').style.display = 'none'; // Hide the message
-      // Continue with your form submission process...
+      document.getElementById('message').style.display = 'none';
     }
   });
 

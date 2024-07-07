@@ -6,60 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>CookMeThis - Blog</title>
     @vite(['resources/css/app.css'])
 </head>
 
-<body>
-    <header>
+<body class="font-sans bg-white text-gray-900">
+    <header class="flex justify-between items-center p-5 bg-white border-b border-gray-300">
         {{-- <img src="/resources/views/pages/banner.jpg" alt="CookMeThis Banner" class="banner"> --}}
-        <h1>CookMeThis</h1>
-        <i class="fa fa-solid fa-bars"></i>
-        <nav class="desktop">
-            <ul>
-                <li><a href="/">Home</a></li>
+        <h1 class="text-3xl text-teal-600">CookMeThis</h1>
+        <i class="fa fa-bars text-xl"></i>
+        <nav class="hidden lg:flex">
+            <ul class="flex space-x-4">
+                <li><a href="/" class="text-lg font-semibold hover:underline">Home</a></li>
                 <li class="bar">|</li>
-                <li><a href="/search">Recipes</a></li>
+                <li><a href="/search" class="text-lg font-semibold hover:underline">Recipes</a></li>
                 <li class="bar">|</li>
-                <li><a href="/popular">Popular</a></li>
+                <li><a href="/popular" class="text-lg font-semibold hover:underline">Popular</a></li>
                 <li class="bar">|</li>
-                <li><a href="/blog">Blog</a></li>
+                <li><a href="/blog" class="text-lg font-semibold hover:underline">Blog</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <h1>Featured Recipes</h1>
-            <div class="recipe-container">
+
+    <main class="max-w-4xl mx-auto p-5">
+        <section class="mb-10">
+            <h1 class="text-4xl font-semibold mb-6">Featured Recipes</h1>
+            <div
+                class="lg:grid lg:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 sm:flex sm:flex-wrap sm:justify-center">
                 @each(recipe in recipes)
-                <article class="recipe-card">
-                    <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
-                    <h3>{{ recipe.title }}</h3>
-                    <p>{{{ recipe.instructions }}}</p>
+                <article class="recipe-card bg-white shadow-md rounded-lg overflow-hidden w-64 h-auto">
+                    <img src="{{ recipe.image }}" alt="{{ recipe.title }}" class="w-full h-48 object-cover">
+                    <h3 class="text-xl font-semibold p-4">{{ recipe.title }}</h3>
+                    {{-- <p>{{{ recipe.instructions }}}</p> --}}
                 </article>
                 @endeach
             </div>
         </section>
+
         <section class="blog-posts">
-            <h1>Latest Posts</h1>
-            <div class="post-container">
-                <article class="blog-post">
-                    <h3>10 Tips for Perfect Pasta</h3>
+            <h1 class="text-4xl font-semibold mb-6">Latest Posts</h1>
+            <div class="space-y-6">
+                <article class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-2">10 Tips for Perfect Pasta</h3>
                     <p>Discover the secrets to making the perfect pasta with our top 10 tips. From selecting the right
                         ingredients to cooking techniques, learn how to elevate your pasta dishes.</p>
                 </article>
-                <article class="blog-post">
-                    <h3>How to Bake the Best Chocolate Chip Cookies</h3>
+                <article class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-2">How to Bake the Best Chocolate Chip Cookies</h3>
                     <p>Get ready to bake the best chocolate chip cookies ever. Follow our step-by-step guide and enjoy
                         delicious, gooey cookies that are sure to be a hit with everyone.</p>
                 </article>
-                <article class="blog-post">
-                    <h3>The Health Benefits of a Mediterranean Diet</h3>
+                <article class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-2">The Health Benefits of a Mediterranean Diet</h3>
                     <p>Explore the numerous health benefits of the Mediterranean diet. Learn how incorporating fresh,
                         wholesome ingredients into your meals can improve your overall well-being.</p>
                 </article>
-                <article class="blog-post">
-                    <h3>Mastering the Art of Grilling</h3>
+                <article class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-2">Mastering the Art of Grilling</h3>
                     <p>Take your grilling skills to the next level with our expert tips and tricks. From choosing the
                         right cuts of meat to mastering the perfect sear, become a grill master in no time.</p>
                 </article>
@@ -85,9 +89,9 @@
                 </article> --}}
             </div>
         </section>
-
     </main>
-    <footer>
+
+    <footer class="bg-white text-black text-center p-5 border-t border-gray-300">
         <p>&copy; 2024 CookMeThis</p>
     </footer>
 </body>
