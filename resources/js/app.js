@@ -58,7 +58,7 @@ function displayRecipes(recipes) {
         recipeDiv.innerHTML = `
             <img src="${recipe.image}" alt="${recipe.title}" class="w-full h-60 object-cover mb-4 rounded-lg shadow-md">
             <h2 class="text-2xl font-bold mb-2 text-gray-700">${recipe.title}</h2>
-            <p class="text-gray-600 mb-4">${recipe.likes} likes</p>
+            <p class="text-gray-600 mb-4"><i class="fa fa-heart"></i>${recipe.likes} </p>
             <button onclick="window.location.href='/recipes/${recipe.id}'" class="border border-black text-black px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors duration-300 mt-auto">View Recipe</button>
         `;
         resultsSection.appendChild(recipeDiv);
@@ -88,6 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
 document.getElementById('recipe-form').addEventListener('submit', function(event) {
     event.preventDefault();
   
@@ -105,5 +107,14 @@ document.getElementById('recipe-form').addEventListener('submit', function(event
     const icon = document.querySelector(".hamburger-icon");
     menu.classList.toggle("open");
     icon.classList.toggle("open");
-  }
-  
+}
+
+//   document.addEventListener('DOMContentLoaded', () => {
+//     const menuButton = document.getElementById('menu-button');
+//     const menu = document.getElementById('menu');
+
+//     menuButton.addEventListener('click', () => {
+//         menu.classList.toggle('hidden');
+//     });})
+
+
