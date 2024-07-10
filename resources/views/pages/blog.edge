@@ -2,30 +2,33 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Page title -->
     <title>CookMeThis - Blog</title>
     @vite(['resources/css/app.css'])
 </head>
 
 <body class="font-sans bg-white text-gray-900">
+    <!-- Header -->
     <header class="flex justify-between items-center p-5 bg-white border-b border-gray-300">
-        {{-- <img src="/resources/views/pages/banner.jpg" alt="CookMeThis Banner" class="banner"> --}}
         <h1 class="text-3xl text-green-700 font-bold ">CookMeThis</h1>
-        {{-- <i class="fa fa-bars text-xl"></i> --}}
+        <!-- Desktop navigation -->
         <nav id="desktop-nav">
             <div>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="/search">Recipes</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <!-- <li><a href="#contact">Contact</a></li> -->
                 </ul>
             </div>
         </nav>
+        <!-- Mobile navigation -->
         <nav id="hamburger-nav">
             <div class="hamburger-menu">
 
@@ -38,76 +41,31 @@
                     <li><a href="/" onclick="toggleMenu()">Home</a></li>
                     <li><a href="/search" onclick="toggleMenu()">Recipes</a></li>
                     <li><a href="/blog" onclick="toggleMenu()">Blog</a></li>
-                    <!-- <li><a href="#contact" onclick="toggleMenu()">Contact</a></li> -->
                 </div>
             </div>
         </nav>
-        {{-- <nav>
-            <div class="lg:hidden">
-                <button id="menu-button" class="p-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            <nav id="desktop-nav">
-
-                <div>
-                    <ul class="nav-links">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Features</a></li>
-                        <!-- <li><a href="#contact">Contact</a></li> -->
-                    </ul>
-                </div>
-            </nav>
-            <nav id="hamburger-nav">
-                <div class="hamburger-menu">
-
-                    <div class="hamburger-icon" onclick="toggleMenu()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="menu-links">
-                        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                        <li><a href="#experience" onclick="toggleMenu()">Recipes</a></li>
-                        <li><a href="#projects" onclick="toggleMenu()">Blog</a></li>
-                        <!-- <li><a href="#contact" onclick="toggleMenu()">Contact</a></li> -->
-                    </div>
-                </div>
-            </nav>
-            <div id="menu" class="menu hidden lg:flex">
-                <ul class="flex space-x-4">
-                    <li><a href="/" class="text-lg font-semibold hover:underline">Home</a></li>
-                    <li class="bar">|</li>
-                    <li><a href="/search" class="text-lg font-semibold hover:underline">Recipes</a></li>
-                    <li class="bar">|</li>
-                    <li><a href="/popular" class="text-lg font-semibold hover:underline">Popular</a></li>
-                    <li class="bar">|</li>
-                    <li><a href="/blog" class="text-lg font-semibold hover:underline">Blog</a></li>
-                </ul>
-            </div>
-        </nav> --}}
     </header>
 
+    <!-- Blog content -->
     <main class="max-w-4xl mx-auto p-5">
+        <!-- Featured recipes -->
         <section class="mb-10">
             <h1 class="text-4xl font-semibold mb-6">Featured Recipes</h1>
+            <!-- Recipe cards -->
             <div class="lg:grid lg:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 justify-center space-x-4 space-y-4">
                 @each(recipe in recipes)
                 <article class="recipe-card bg-white shadow-md rounded-lg overflow-hidden w-64 h-auto">
                     <img src="{{ recipe.image }}" alt="{{ recipe.title }}" class="w-full h-48 object-cover">
                     <h3 class="text-xl font-semibold p-4">{{ recipe.title }}</h3>
-                    {{-- <p>{{{ recipe.instructions }}}</p> --}}
                 </article>
                 @endeach
             </div>
         </section>
 
+        <!-- Latest posts -->
         <section class="blog-posts mb-16 py-4">
             <h1 class="text-4xl font-semibold mb-6">Latest Posts</h1>
+            <!-- Blog post cards -->
             <div class="space-y-6">
                 <article class="bg-white shadow-md rounded-lg p-6">
                     <h3 class="text-2xl font-semibold mb-2">10 Tips for Perfect Pasta</h3>
@@ -129,34 +87,16 @@
                     <p>Take your grilling skills to the next level with our expert tips and tricks. From choosing the
                         right cuts of meat to mastering the perfect sear, become a grill master in no time.</p>
                 </article>
-                {{-- <article class="blog-post">
-                    <h3>5 Quick and Healthy Breakfast Ideas</h3>
-                    <p>Start your day off right with these quick and healthy breakfast ideas. From smoothies to
-                        overnight oats, find delicious and nutritious options for busy mornings.</p>
-                </article>
-                <article class="blog-post">
-                    <h3>Vegetarian Meals for Meat Lovers</h3>
-                    <p>Discover hearty and satisfying vegetarian meals that even meat lovers will enjoy. Learn how to
-                        create delicious plant-based dishes that are packed with flavor and nutrition.</p>
-                </article>
-                <article class="blog-post">
-                    <h3>Summer Salads for Refreshing Meals</h3>
-                    <p>Beat the heat with these refreshing summer salads. Find recipes that are light, healthy, and
-                        perfect for hot weather dining.</p>
-                </article>
-                <article class="blog-post">
-                    <h3>Decadent Desserts for Chocolate Lovers</h3>
-                    <p>Indulge your sweet tooth with these decadent dessert recipes. Perfect for chocolate lovers, these
-                        treats will satisfy your cravings.</p>
-                </article> --}}
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="fixed inset-x-0 bottom-0 bg-white text-center py-5 border-t border-gray-300">
         <p>&copy; 2024 CookMeThis</p>
     </footer>
 </body>
+<!-- JavaScript for toggling mobile menu -->
 <script>  function toggleMenu() {
         const menu = document.querySelector(".menu-links");
         const icon = document.querySelector(".hamburger-icon");

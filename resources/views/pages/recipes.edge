@@ -2,29 +2,33 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Page title -->
     <title>CookMeThis</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="bg-gray-100 text-gray-900">
+    <!-- Header -->
     <header class="flex justify-between items-center p-5 bg-white shadow-md">
-        {{-- <img src="/resources/views/pages/banner.jpg" alt="CookMeThis Banner" class="banner"> --}}
         <h1 class="text-3xl text-green-700 font-bold ">CookMeThis</h1>
-        {{-- <i class="fa fa-bars text-2xl"></i> --}}
+        <!-- Desktop navigation -->
         <nav id="desktop-nav">
             <div>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="/search">Recipes</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <!-- <li><a href="#contact">Contact</a></li> -->
                 </ul>
             </div>
         </nav>
+
+        <!-- Mobile navigation -->
         <nav id="hamburger-nav">
             <div class="hamburger-menu">
 
@@ -37,22 +41,11 @@
                     <li><a href="/" onclick="toggleMenu()">Home</a></li>
                     <li><a href="/search" onclick="toggleMenu()">Recipes</a></li>
                     <li><a href="/blog" onclick="toggleMenu()">Blog</a></li>
-                    <!-- <li><a href="#contact" onclick="toggleMenu()">Contact</a></li> -->
                 </div>
             </div>
         </nav>
-        {{-- <nav class="hidden lg:flex">
-            <ul class="flex space-x-4">
-                <li><a href="/" class="text-lg font-semibold hover:underline">Home</a></li>
-                <li class="bar">|</li>
-                <li><a href="/search" class="text-lg font-semibold hover:underline">Recipes</a></li>
-                <li class="bar">|</li>
-                <li><a href="/popular" class="text-lg font-semibold hover:underline">Popular</a></li>
-                <li class="bar">|</li>
-                <li><a href="/blog" class="text-lg font-semibold hover:underline">Blog</a></li>
-            </ul>
-        </nav> --}}
     </header>
+    <!-- Main content for recipe search -->
     <main class="max-w-6xl mx-auto bg-white rounded-lg shadow-lg m-24 p-8">
         <h1 class="text-4xl font-semibold mb-4"><i class="fa fa-cutlery" aria-hidden="true"></i> Unleash Your Inner
             Chef: <br> Discover Delicious Dishes Based on What You Have</h1>
@@ -61,6 +54,7 @@
             mouthwatering meals waiting to be created. No more scrambling through cookbooks or wasting precious
             groceries. Let's turn your kitchen into a haven of creativity and deliciousness!</p>
         <div class="border-b-2 border-gray-300 my-6"></div>
+        <!-- Form for entering ingredients and searching for recipes -->
         <form id="recipe-form" class="flex items-center space-x-4">
             <input type="text" id="ingredients" placeholder="Enter ingredients"
                 class="flex-1 p-2 border border-gray-300 rounded-lg">
@@ -70,15 +64,17 @@
         <div id="message" class="text-center my-10">
             <h2 class="text-2xl">Try to enter some ingredients.</h2>
         </div>
+        <!-- Recipe results -->
         <section id="recipe-results"
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-10 justify-items-center">
-            <!-- Recipes will be displayed here -->
         </section>
     </main>
+    <!-- Footer -->
     <footer class="fixed inset-x-0 bottom-0 bg-white text-center py-5 border-t border-gray-300">
         <p>&copy; 2024 CookMeThis</p>
     </footer>
 </body>
+<!-- JavaScript for toggling the mobile menu -->
 <script>  function toggleMenu() {
         const menu = document.querySelector(".menu-links");
         const icon = document.querySelector(".hamburger-icon");

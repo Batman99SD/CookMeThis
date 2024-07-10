@@ -2,67 +2,69 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Page title -->
     <title>CookMeThis</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans bg-white text-gray-900">
+    <!-- Header -->
     <header class="flex justify-between items-center p-5 bg-white shadow-md">
+        <!-- Logo -->
         <a href="/" class="no-underline">
             <h1 class="text-3xl text-green-700 font-bold ">CookMeThis</h1>
         </a>
-        {{-- <i class="fa fa-bars text-2xl"></i> --}}
+
+        <!-- Desktop navigation -->
         <nav id="desktop-nav">
             <div>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="/search">Recipes</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <!-- <li><a href="#contact">Contact</a></li> -->
                 </ul>
             </div>
         </nav>
+
+        <!-- Mobile navigation -->
         <nav id="hamburger-nav">
             <div class="hamburger-menu">
-
+                <!-- Hamburger icon -->
                 <div class="hamburger-icon" onclick="toggleMenu()">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
+
+                <!-- Mobile menu links -->
                 <div class="menu-links">
                     <li><a href="/" onclick="toggleMenu()">Home</a></li>
                     <li><a href="/search" onclick="toggleMenu()">Recipes</a></li>
                     <li><a href="/blog" onclick="toggleMenu()">Blog</a></li>
-                    <!-- <li><a href="#contact" onclick="toggleMenu()">Contact</a></li> -->
                 </div>
             </div>
         </nav>
-        {{-- <nav class="hidden lg:flex">
-            <ul class="flex space-x-4">
-                <li><a href="/" class="text-lg font-semibold hover:underline">Home</a></li>
-                <li class="bar">|</li>
-                <li><a href="/search" class="text-lg font-semibold hover:underline">Recipes</a></li>
-                <li class="bar">|</li>
-                <li><a href="/popular" class="text-lg font-semibold hover:underline">Popular</a></li>
-                <li class="bar">|</li>
-                <li><a href="/blog" class="text-lg font-semibold hover:underline">Blog</a></li>
-            </ul>
-        </nav> --}}
     </header>
 
+    <!-- Welcome section -->
     <div id="welcome-section" class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <main class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
             <div class="flex flex-col md:flex-row items-center">
+                <!-- Welcome message -->
                 <div class="md:w-1/2 p-4">
                     <h1 class="text-4xl font-semibold mb-4">Welcome to <span
                             class="text-teal-600 text-green-700">CookMeThis</span>,
                         your ultimate culinary companion.</h1>
+                    <!-- Description -->
                     <p class="text-lg mb-6">Discover a vast array of delectable recipes tailored to suit your home
                         cooking needs. Whether you're a seasoned chef or a beginner in the kitchen, our platform offers
                         a diverse selection of dishes from around the globe. Explore, experiment, and elevate your
@@ -70,6 +72,7 @@
                     <button onclick="window.location.href='/search'"
                         class="bg-green-700 text-white py-3 px-4 rounded-xl hover:bg-gray-800">Find Recipes</button>
                 </div>
+                <!-- Image section -->
                 <div class="md:w-1/2 p-4 mb-8">
                     <img class="rounded-lg" src="/resources/views/pages/3.jpg" alt="Cooking Image">
                 </div>
@@ -77,10 +80,12 @@
         </main>
     </div>
 
+    <!-- Footer -->
     <footer class="fixed inset-x-0 bottom-0 bg-white text-center py-5 border-t border-gray-300">
         <p>&copy; 2024 CookMeThis</p>
     </footer>
 </body>
+<!-- Script for toggling the menu -->
 <script>function toggleMenu() {
         const menu = document.querySelector(".menu-links");
         const icon = document.querySelector(".hamburger-icon");
