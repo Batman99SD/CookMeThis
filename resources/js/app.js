@@ -1,11 +1,11 @@
-console.log('Hello World')
-
+// Event listener for the recipe form submission
 document.getElementById('recipe-form').addEventListener('submit', function(event) {
     event.preventDefault();
     const ingredients = document.getElementById('ingredients').value;
     fetchRecipes(ingredients);
 });
 
+// Function to fetch recipes based on the ingredients
 function fetchRecipes(ingredients) {
     fetch(`/recipes?ingredients=${encodeURIComponent(ingredients)}`)
         .then(response => response.json())
@@ -13,6 +13,7 @@ function fetchRecipes(ingredients) {
         .catch(error => console.error('Error fetching recipes:', error));
 }
 
+// Function to view a specific recipe
 window.viewRecipe = function(id) {
     console.log('viewRecipe called', id);
     fetch(`/recipes/${id}`)
@@ -48,6 +49,7 @@ window.viewRecipe = function(id) {
         });
 }
 
+// Function to display the fetched recipes
 function displayRecipes(recipes) {
     console.log('displayRecipes called', recipes);
     const resultsSection = document.getElementById('recipe-results');
@@ -63,25 +65,28 @@ function displayRecipes(recipes) {
         `;
         resultsSection.appendChild(recipeDiv);
     });
-    // resultsSection.style.display = 'block';
     console.log(recipe);
     document.getElementById('single-recipe');
 }
 
+// Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Get references to the form and its elements
     const form = document.getElementById('recipe-form');
     const ingredientsInput = document.getElementById('ingredients');
     const noInputMessage = document.getElementById('no-input-message');
     const recipeResults = document.getElementById('recipe-results');
 
+    // Add event listener for form submission
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         const ingredients = ingredientsInput.value.trim();
-
+        // If no ingredients were entered, show a message and hide the results
         if (!ingredients) {
             noInputMessage.style.display = 'block';
             recipeResults.style.display = 'none';
         } else {
+            // If ingredients were entered, hide the message and show the results
             noInputMessage.style.display = 'none';
             recipeResults.style.display = 'block';
         }
@@ -89,32 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
+// Add event listener for form submission
 document.getElementById('recipe-form').addEventListener('submit', function(event) {
     event.preventDefault();
   
     var ingredients = document.getElementById('ingredients').value.trim();
   
+    // If no ingredients were entered, show a message
     if (ingredients === '') {
       document.getElementById('message').style.display = 'block';
     } else {
+        // If ingredients were entered, hide the message
       document.getElementById('message').style.display = 'none';
     }
   });
-
-  function toggleMenu() {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
-}
-
-//   document.addEventListener('DOMContentLoaded', () => {
-//     const menuButton = document.getElementById('menu-button');
-//     const menu = document.getElementById('menu');
-
-//     menuButton.addEventListener('click', () => {
-//         menu.classList.toggle('hidden');
-//     });})
-
-

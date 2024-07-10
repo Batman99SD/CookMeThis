@@ -2,70 +2,68 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
     <title>{{recipe.title}}</title>
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     @vite(['resources/css/app.css'])
 </head>
 
 <body class="font-sans bg-white text-black">
+    <!-- Header -->
     <header class="flex justify-between items-center p-5 bg-white border-b border-gray-300">
-        {{-- <img src="/resources/views/pages/banner.jpg" alt="CookMeThis Banner" class="banner"> --}}
         <h1 class="text-3xl text-green-700 font-bold ">CookMeThis</h1>
-        {{-- <i class="fa fa-solid fa-bars text-xl"></i> --}}
+        <!-- Desktop navigation -->
         <nav id="desktop-nav">
             <div>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="/search">Recipes</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <!-- <li><a href="#contact">Contact</a></li> -->
                 </ul>
             </div>
         </nav>
+        <!-- Mobile navigation -->
         <nav id="hamburger-nav">
             <div class="hamburger-menu">
-
+                <!-- Hamburger icon -->
                 <div class="hamburger-icon" onclick="toggleMenu()">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
+                <!-- Mobile menu links -->
                 <div class="menu-links">
                     <li><a href="/" onclick="toggleMenu()">Home</a></li>
                     <li><a href="/search" onclick="toggleMenu()">Recipes</a></li>
                     <li><a href="/blog" onclick="toggleMenu()">Blog</a></li>
-                    <!-- <li><a href="#contact" onclick="toggleMenu()">Contact</a></li> -->
                 </div>
             </div>
         </nav>
-        {{-- <nav class="hidden lg:flex">
-            <ul class="flex space-x-4">
-                <li><a href="/" class="text-lg font-semibold hover:underline">Home</a></li>
-                <li class="bar">|</li>
-                <li><a href="/search" class="text-lg font-semibold hover:underline">Recipes</a></li>
-                <li class="bar">|</li>
-                <li><a href="/popular" class="text-lg font-semibold hover:underline">Popular</a></li>
-                <li class="bar">|</li>
-                <li><a href="/blog" class="text-lg font-semibold hover:underline">Blog</a></li>
-            </ul>
-        </nav> --}}
     </header>
 
     <main class="max-w-4xl mx-auto p-5">
+        <!-- Recipe view -->
         <div class="recipe-view text-center ">
+            <!-- Recipe title -->
             <h1 class="text-4xl font-semibold mb-4">{{recipe.title}}</h1>
+            <!-- Recipe image -->
             <img src="{{recipe.image}}" alt="{{recipe.title}}" class=" h-auto mb-4 rounded-lg mx-auto block">
+            <!-- Recipe details -->
             <div class="lg:flex lg:flex-wrap lg:justify-around py-4">
+                <!-- time recipe takes to be ready -->
                 <p class="text-lg mb-2"><i class="fa-solid fa-alarm-clock mr-2"></i>Ready In
                     {{recipe.readyInMinutes}} minutes
                 </p>
+                <!-- number of people it serves -->
                 <p class="text-lg mb-4"><i class="fa fa-solid fa-users mr-2"></i>Serving {{recipe.servings}} People</p>
             </div>
-            {{-- <p>{{recipe.likes}} <i class="fas fa-heart"></i></p> --}}
             <h2 class="text-2xl text-center font-semibold mb-2">Ingredients</h2>
+            <!-- List of ingredients -->
             <ul class="ingredients-list list-inside text-center mb-4 lg:flex lg:flex-wrap lg:justify-between">
                 @each(ingredient in recipe.extendedIngredients)
                 <li class="mb-1"><i class="fa fa-spoon mr-2"></i> {{ingredient.amount}} {{ingredient.unit}}
@@ -73,18 +71,22 @@
                 @endeach
             </ul>
             <h2 class="text-2xl text-center font-semibold mb-2">Instructions</h2>
+            <!-- Recipe instructions -->
             <div class="recipe-instructions text-center mb-6">
                 <p class="whitespace-pre-line">{{{recipe.instructions}}}</p>
             </div>
+            <!-- Back button -->
             <button class="back py-2 px-4 bg-black text-white rounded-lg text-lg hover:bg-teal-600"
                 onclick="window.history.back()">Back to Results</button>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="fixed inset-x-0 bottom-0 bg-white text-center py-5 border-t border-gray-300">
         <p>&copy; 2024 CookMeThis</p>
     </footer>
 </body>
+<!-- JavaScript for toggling navigation menu -->
 <script>  function toggleMenu() {
         const menu = document.querySelector(".menu-links");
         const icon = document.querySelector(".hamburger-icon");
