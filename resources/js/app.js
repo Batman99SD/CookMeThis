@@ -28,15 +28,15 @@ window.viewRecipe = function(id) {
                 : '';
 
             const recipeHTML = `
-                <h2>${title}</h2>
-                <img src="${image}" alt="${title}">
-                <p>Servings: ${servings}</p>
-                <p>Ready in Minutes: ${readyInMinutes}</p>
-                <ul>
+                <h2class="text-2xl font-bold mb-2">${title}</h2>
+                <img src="${image}" alt="${title} class="w-full h-40 object-cover mb-4 rounded-lg">
+                <p class="mb-2">Servings: ${servings}</p>
+                <p class="mb-4">Ready in Minutes: ${readyInMinutes}</p>
+                <ul class="list-disc list-inside mb-4">
                 ${ingredientsHTML}
                 </ul>
-                <p>${description}</p>
-                <button id="back-to-results">Back to Results</button>
+                <p class="mb-4">${description}</p>
+                <button id="back-to-results class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700"">Back to Results</button>
             `;
 
             const recipeContainer = document.getElementById('single-recipe');
@@ -54,12 +54,12 @@ function displayRecipes(recipes) {
     resultsSection.innerHTML = '';
     recipes.forEach(recipe => {
         const recipeDiv = document.createElement('div');
-        recipeDiv.classList.add('recipe');
+        recipeDiv.classList.add('recipe', 'bg-white', 'p-6', 'rounded-lg', 'shadow-md', 'hover:shadow-lg', 'transition-shadow', 'duration-300', 'w-full', 'max-w-xs', 'sm:max-w-sm', 'lg:max-w-md', 'mb-6', 'flex', 'flex-col', 'justify-between');
         recipeDiv.innerHTML = `
-            <img src="${recipe.image}" alt="${recipe.title}">
-            <h2>${recipe.title}</h2>
-            <p>${recipe.likes} likes</p>
-            <button onclick="window.location.href='/recipes/${recipe.id}'">View Recipe</button>
+            <img src="${recipe.image}" alt="${recipe.title}" class="w-full h-60 object-cover mb-4 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-2 text-gray-700">${recipe.title}</h2>
+            <p class="text-gray-600 mb-4"><i class="fa fa-heart"></i>${recipe.likes} </p>
+            <button onclick="window.location.href='/recipes/${recipe.id}'" class="border border-black text-black px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors duration-300 mt-auto">View Recipe</button>
         `;
         resultsSection.appendChild(recipeDiv);
     });
@@ -84,20 +84,37 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             noInputMessage.style.display = 'none';
             recipeResults.style.display = 'block';
-            // Add your code to fetch and display recipes
         }
     });
 });
 
+
+
 document.getElementById('recipe-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from being submitted
+    event.preventDefault();
   
     var ingredients = document.getElementById('ingredients').value.trim();
   
     if (ingredients === '') {
-      document.getElementById('message').style.display = 'block'; // Show the message
+      document.getElementById('message').style.display = 'block';
     } else {
-      document.getElementById('message').style.display = 'none'; // Hide the message
-      // Continue with your form submission process...
+      document.getElementById('message').style.display = 'none';
     }
   });
+
+  function toggleMenu() {
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
+    menu.classList.toggle("open");
+    icon.classList.toggle("open");
+}
+
+//   document.addEventListener('DOMContentLoaded', () => {
+//     const menuButton = document.getElementById('menu-button');
+//     const menu = document.getElementById('menu');
+
+//     menuButton.addEventListener('click', () => {
+//         menu.classList.toggle('hidden');
+//     });})
+
+
