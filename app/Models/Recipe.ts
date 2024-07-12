@@ -17,6 +17,12 @@ export default class Recipe extends BaseModel {
   @column()
   public image_url: string = '' // Add an initializer to the 'image_url' property
 
+  @column()
+  public description: string = ''; // Add an initializer to the 'description' property
+
+  @column()
+  public popularity: number = 0; // Add an initializer to the 'popularity' property
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime = DateTime.now() // Add an initializer to the 'createdAt' property
 
